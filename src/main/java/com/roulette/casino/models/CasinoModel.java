@@ -1,18 +1,20 @@
 package com.roulette.casino.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CasinoModel {
 	
-	private long casinoId;
+	private Long casinoId;
 	private  String casinoName;
-	private List<DealerModel> dealers;
-	private double balance;
+	private List<DealerModel> dealers = new ArrayList<>();
+	private Double balance;
+	private Double rechargeAmount;
 	
-	public long getCasinoId() {
+	public Long getCasinoId() {
 		return casinoId;
 	}
-	public void setCasinoId(long casinoId) {
+	public void setCasinoId(Long casinoId) {
 		this.casinoId = casinoId;
 	}
 	public String getCasinoName() {
@@ -24,13 +26,20 @@ public class CasinoModel {
 	public List<DealerModel> getDealers() {
 		return dealers;
 	}
+	public Double getBalance() {
+		return balance;
+	}
+	public void setBalance(Double balance) {
+		this.balance = balance;
+	}
+	public Double getRechargeAmount() {
+		return rechargeAmount;
+	}
+	public void setRechargeAmount(Double rechargeAmount) {
+		this.rechargeAmount = rechargeAmount;
+	}
 	public void setDealers(List<DealerModel> dealers) {
 		this.dealers = dealers;
 	}
-	public double getBalance() {
-		return balance;
-	}
-	public void setBalance(double balance) {
-		this.balance = balance;
-	}
+	
 }

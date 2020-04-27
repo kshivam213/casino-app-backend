@@ -16,44 +16,44 @@ public class Games {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "game_id", nullable = false, unique = true)
-	private long gameId;
+	private Long gameId;
 	
 	@Column(name= "start_time", nullable= false)
-	private long startTime;
+	private Long startTime;
 	
 	@Column(name= "end_time", nullable= false)
-	private long endTime;
+	private Long endTime;
 	
 	@Column(name= "status")
 	private boolean status;
 	
 	@Column(name= "thrown_number")
-	private int thrownNumber;
+	private Integer thrownNumber;
 	
 	@OneToOne(fetch= FetchType.LAZY, mappedBy= "games")
 	private Dealers dealer;
 
-	public long getGameId() {
+	public Long getGameId() {
 		return gameId;
 	}
 
-	public void setGameId(long gameId) {
+	public void setGameId(Long gameId) {
 		this.gameId = gameId;
 	}
 
-	public long getStartTime() {
+	public Long getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(long startTime) {
+	public void setStartTime(Long startTime) {
 		this.startTime = startTime;
 	}
 
-	public long getEndTime() {
+	public Long getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(long endTime) {
+	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
 	}
 
@@ -65,11 +65,11 @@ public class Games {
 		this.status = status;
 	}
 
-	public int getThrownNumber() {
+	public Integer getThrownNumber() {
 		return thrownNumber;
 	}
 
-	public void setThrownNumber(int thrownNumber) {
+	public void setThrownNumber(Integer thrownNumber) {
 		this.thrownNumber = thrownNumber;
 	}
 
@@ -80,4 +80,6 @@ public class Games {
 	public void setDealer(Dealers dealer) {
 		this.dealer = dealer;
 	}
+	
+	
 }

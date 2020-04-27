@@ -16,7 +16,7 @@ public class Dealers {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "dealer_id", nullable = false, unique = true)
-	private long dealerId;
+	private Long dealerId;
 	
 	@Column(name= "dealer_name", nullable= false)
 	private String dealerName;
@@ -24,5 +24,28 @@ public class Dealers {
 	@OneToOne()
 	@JoinColumn(name = "game_id")
 	private Games games;
-	
+
+	public Long getDealerId() {
+		return dealerId;
+	}
+
+	public void setDealerId(Long dealerId) {
+		this.dealerId = dealerId;
+	}
+
+	public String getDealerName() {
+		return dealerName;
+	}
+
+	public void setDealerName(String dealerName) {
+		this.dealerName = dealerName;
+	}
+
+	public Games getGames() {
+		return games;
+	}
+
+	public void setGames(Games games) {
+		this.games = games;
+	}
 }

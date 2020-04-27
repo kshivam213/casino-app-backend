@@ -12,7 +12,7 @@ public class AppResponse {
 	
 	private String description;
 
-	private List<Object> result;
+	private Object result;
 
 	private List<AppErrorResponse> errors;
 	

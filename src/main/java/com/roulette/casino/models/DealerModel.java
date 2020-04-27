@@ -2,13 +2,13 @@ package com.roulette.casino.models;
 
 public class DealerModel {
 	
-	private long dealerId;
+	private Long dealerId;
 	private String dealerName;
 	
-	public long getDealerId() {
+	public Long getDealerId() {
 		return dealerId;
 	}
-	public void setDealerId(long dealerId) {
+	public void setDealerId(Long dealerId) {
 		this.dealerId = dealerId;
 	}
 	public String getDealerName() {

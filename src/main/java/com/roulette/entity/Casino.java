@@ -18,7 +18,7 @@ public class Casino {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "casino_id", nullable = false, unique = true)
-	private long casinoId;
+	private Long casinoId;
 	
 	@Column(name= "casino_name", nullable= false)
 	private String casinoName;
@@ -29,11 +29,11 @@ public class Casino {
 	@OneToMany
 	private List<Dealers> dealers = new ArrayList<>();
 
-	public long getCasinoId() {
+	public Long getCasinoId() {
 		return casinoId;
 	}
 
-	public void setCasinoId(long casinoId) {
+	public void setCasinoId(Long casinoId) {
 		this.casinoId = casinoId;
 	}
 	

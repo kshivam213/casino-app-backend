@@ -14,22 +14,22 @@ public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "user_id", nullable = false, unique = true)
-	private long dealerId;
+	private Long dealerId;
 	
 	@Column(name= "user_name", nullable= false)
 	private String userName;
 	
 	@Column(name= "balance", nullable= false)
-	private double balance;
+	private Double balance;
 	
 	@Column(name= "cashino_name", nullable= false)
 	private String cashinoName;
 
-	public long getDealerId() {
+	public Long getDealerId() {
 		return dealerId;
 	}
 
-	public void setDealerId(long dealerId) {
+	public void setDealerId(Long dealerId) {
 		this.dealerId = dealerId;
 	}
 
@@ -41,11 +41,11 @@ public class Users {
 		this.userName = userName;
 	}
 
-	public double getBalance() {
+	public Double getBalance() {
 		return balance;
 	}
 
-	public void setBalance(double balance) {
+	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
 
