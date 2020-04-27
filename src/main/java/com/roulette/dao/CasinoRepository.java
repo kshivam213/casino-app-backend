@@ -7,4 +7,6 @@ import com.roulette.entity.Casino;
 
 @Repository
 public interface CasinoRepository extends JpaRepository<Casino, Long>{
+	
+	Casino findByCasinoName(String casinoName);
 }

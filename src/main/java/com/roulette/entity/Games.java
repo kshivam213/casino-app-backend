@@ -1,13 +1,19 @@
 package com.roulette.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "games")
@@ -18,10 +24,10 @@ public class Games {
 	@Column(name = "game_id", nullable = false, unique = true)
 	private Long gameId;
 	
-	@Column(name= "start_time", nullable= false)
+	@Column(name= "start_time")
 	private Long startTime;
 	
-	@Column(name= "end_time", nullable= false)
+	@Column(name= "end_time")
 	private Long endTime;
 	
 	@Column(name= "status")
@@ -30,8 +36,12 @@ public class Games {
 	@Column(name= "thrown_number")
 	private Integer thrownNumber;
 	
-	@OneToOne(fetch= FetchType.LAZY, mappedBy= "games")
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Dealers dealer;
+	
+	@OneToMany(mappedBy="game")
+	private List<Bet> bets = new ArrayList<>();
 
 	public Long getGameId() {
 		return gameId;
@@ -79,6 +89,14 @@ public class Games {
 
 	public void setDealer(Dealers dealer) {
 		this.dealer = dealer;
+	}
+
+	public List<Bet> getBets() {
+		return bets;
+	}
+
+	public void setBets(Bet bets) {
+		this.bets.add(bets);
 	}
 	
 	

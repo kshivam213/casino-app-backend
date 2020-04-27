@@ -1,12 +1,14 @@
 package com.roulette.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,9 +23,8 @@ public class Dealers {
 	@Column(name= "dealer_name", nullable= false)
 	private String dealerName;
 		
-	@OneToOne()
-	@JoinColumn(name = "game_id")
-	private Games games;
+	@OneToMany(mappedBy="dealer")
+	private List<Games> games = new ArrayList<>();
 
 	public Long getDealerId() {
 		return dealerId;
@@ -41,11 +42,11 @@ public class Dealers {
 		this.dealerName = dealerName;
 	}
 
-	public Games getGames() {
+	public List<Games> getGames() {
 		return games;
 	}
 
 	public void setGames(Games games) {
-		this.games = games;
+		this.games.add(games);
 	}
 }

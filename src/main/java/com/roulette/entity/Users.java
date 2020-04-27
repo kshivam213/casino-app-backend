@@ -1,10 +1,14 @@
 package com.roulette.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -14,7 +18,7 @@ public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "user_id", nullable = false, unique = true)
-	private Long dealerId;
+	private Long userId;
 	
 	@Column(name= "user_name", nullable= false)
 	private String userName;
@@ -22,15 +26,26 @@ public class Users {
 	@Column(name= "balance", nullable= false)
 	private Double balance;
 	
-	@Column(name= "cashino_name", nullable= false)
+	@Column(name= "casino_name")
 	private String cashinoName;
+	
+	@OneToMany
+	private List<Bet> bets = new ArrayList<>();
 
-	public Long getDealerId() {
-		return dealerId;
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setDealerId(Long dealerId) {
-		this.dealerId = dealerId;
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public List<Bet> getBets() {
+		return bets;
+	}
+
+	public void setBet(Bet bet) {
+		this.bets.add(bet);
 	}
 
 	public String getUserName() {

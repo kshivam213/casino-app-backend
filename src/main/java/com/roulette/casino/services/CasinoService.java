@@ -35,9 +35,11 @@ public class CasinoService implements CasinoInterface{
 		
 		CommonUtils.preCondition(casinoModel == null, "Casino details can't be null");
 		CommonUtils.preCondition(casinoModel.getCasinoName() == null, "Casino Name can't be null");
-		CommonUtils.preCondition(casinoModel.getBalance() <= 0, "Initial balance can't be 0");
+		CommonUtils.preCondition(casinoModel.getBalance() == null, "Initial balance can't be 0");
 		
-		Casino casino = ConversionUtilits.convertCasinoModelToEntity(casinoModel);
+		Casino casino = new Casino();
+		casino.setCasinoName(casinoModel.getCasinoName());
+		casino.setBalance(casino.getBalance());
 		
 		casino = casinoDaoImpl.saveCasino(casino);
 		casinoModel= ConversionUtilits.convertCasinoEntityToModel(casino);
