@@ -9,7 +9,8 @@ public class GameUtilities {
 		
 		GameModel gameModel = new GameModel();
 		if(game.getGameId() != null)
-			gameModel.setDealerId(game.getGameId());
+			gameModel.setGameId(game.getGameId());
+		
 		if(dealerId != null) {
 			gameModel.setDealerId(dealerId);
 		}

@@ -4,11 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.roulette.entity.Bet;
+import com.roulette.entity.Games;
 import com.roulette.entity.Users;
 import com.roulette.user.models.BetModel;
 import com.roulette.user.models.UserModel;
 
 public class UserUtitlites {
+	
+	public static BetModel convertBetEntityToModel(Bet bet) {
+		
+		Games game = bet.getGame();
+		BetModel model = new BetModel();
+		model.setBetAmount(bet.getBetAmount());
+		model.setBetId(bet.getBetId());
+		model.setBetNumber(bet.getBetNumber());
+		model.setGameId(game.getGameId());
+		
+		return model;
+	}
 	
 	public static UserModel convertUserEntityToModel(Users users) {
 		

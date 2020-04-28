@@ -29,6 +29,7 @@ public class Bet {
 	@Column(name= "bet_status")
 	private boolean betStatus;
 	
+	
 	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Users user;

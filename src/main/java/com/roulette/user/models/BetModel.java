@@ -6,6 +6,8 @@ public class BetModel {
 	private Integer betNumber;
 	private Double betAmount;
 	private Boolean status;
+	private Long gameId;
+	
 	
 	public Long getBetId() {
 		return betId;
@@ -30,5 +32,11 @@ public class BetModel {
 	}
 	public void setStatus(Boolean status) {
 		this.status = status;
+	}
+	public Long getGameId() {
+		return gameId;
+	}
+	public void setGameId(Long gameId) {
+		this.gameId = gameId;
 	}
 }

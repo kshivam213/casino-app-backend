@@ -126,10 +126,9 @@ public class UserService implements UserInterface {
 		
 		gameDaoImpl.addGame(game);
 		
+		betModel = UserUtitlites.convertBetEntityToModel(bet);
 		
-		userModel = UserUtitlites.convertUserEntityToModel(user);
-		
-		return AppResponse.builder().result(userModel).description("You betted").success(true).build();
+		return AppResponse.builder().result(betModel).description("You betted").success(true).build();
 	}
 
 	@Override
